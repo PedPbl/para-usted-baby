@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <link rel="stylesheet" href="carta.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Imagen Gato.gif arriba de la carta -->
+        <div id="gato-img-container">
+            <img src="Gato.gif" alt="Gato" id="gato-img">
+        </div>
+
+        <!-- Carta de Amor -->
+        <div class="card">
+            <h2>Para Usted Dara</h2>
+            <p>ve la magia de la programacion</p>
+            <p>Este es un mensaje es pa usted. Me encantaría compartir una cita contigo. ¿Aceptarías mi invitación?</p>
+            
+            <!-- Botones para aceptar o no aceptar -->
+            <div class="buttons">
+                <button id="accept-button" onclick="acceptCita()">Acepta salir </button>
+                <button id="reject-button" onclick="moveRejectButton()">O me bota</button>
+            </div>
+        </div>
+
+        <!-- Imagen que se mostrará cuando se acepte la cita -->
+        <div id="img-container" class="hidden">
+        </div>
+
+        <!-- Mensaje de agradecimiento -->
+        <div id="thank-you-message" class="hidden">
+            <h3>¡Gracias por aceptar! ¡Siuuuu XD!</h3>
+        </div>
+
+        <!-- Contenedor para las estrellas -->
+        <div id="stars-container"></div>
+    </div>
+
+    <script src="carta.js"></script>
+</body>
+</html>

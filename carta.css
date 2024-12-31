@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #030303;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;  /* Evita que las estrellas se desborden */
+}
+
+.container {
+    position: relative;
+}
+#gato-img-container {
+    margin-bottom: 20px;
+}
+
+#gato-img {
+    width: 150px;
+    height: auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.card {
+    background-color: #e6dcdc;
+    border: 2px solid #ff0066;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.card h2 {
+    color: #ff0066;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 18px;
+    color: #ff0066;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #fd9bd1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff3399;
+}
+
+button:focus {
+    outline: none;
+}
+
+button.glowing {
+    box-shadow: 0 0 15px #ff0066, 0 0 25px #ff0066, 0 0 35px #ff0066;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+#thank-you-message {
+    font-size: 20px;
+    color: #e2e0e1;
+    font-weight: bold;
+    display: none;
+}
+
+#img-container {
+    margin-top: 20px;
+    display: none;
+}
+
+#img2 {
+    width: 150px;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#reject-button {
+    position: relative;
+}
+
+#reject-button.moving {
+    position: absolute;
+    animation: moveButton 2s infinite alternate;
+}
+
+@keyframes moveButton {
+    0% { left: 0; top: 0; }
+    25% { left: 20px; top: 20px; }
+    50% { left: -20px; top: -20px; }
+    75% { left: 10px; top: -30px; }
+    100% { left: -30px; top: 30px; }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 15px #ff0066, 0 0 25px #ff0066, 0 0 35px #ff0066;
+    }
+    100% {
+        box-shadow: 0 0 25px #ff3399, 0 0 35px #ff3399, 0 0 45px #ff3399;
+    }
+}
+
+/* Estilos para las estrellas */
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #9cdbff;
+    border-radius: 50%;
+    animation: fall 2s linear infinite;
+    opacity: 0;
+    box-shadow: 0 0 10px #f16c6c;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh); /* Hace que caigan por toda la pantalla */
+        opacity: 0;
+    }
+}
+
+#stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* No interfiere con los clics */
+}
